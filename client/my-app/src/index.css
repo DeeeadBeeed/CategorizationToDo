@@ -1,0 +1,705 @@
+/* Base Styles */
+
+/* global.css */
+
+/* Import Google Font (if using) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply Font */
+body {
+  font-family: 'Roboto', sans-serif; /* Use the imported font or fallback to a system font */
+}
+
+.Navbar{
+  display: flex;
+  justify-content: space-between;
+}
+.react-calendar { 
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+  height: 100vh;
+  margin-left: 20px;
+  border: none;
+  border-left: 1px solid black;
+}
+
+.react-calendar__navigation button {
+  color: black;
+  min-width: 44px;
+  background: none;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f8f8fa;
+}
+
+.react-calendar__navigation button[disabled] {
+  background-color: #f0f0f0;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #f8f8fa;
+  color: black;
+  border-radius: 6px;
+}
+
+.react-calendar__tile--now {
+  background: #6f48eb33;
+  border-radius: 6px;
+  font-weight: bold;
+  color: black;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #6f48eb33;
+  border-radius: 6px;
+  font-weight: bold;
+  color: black;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #f8f8fa;
+}
+
+.react-calendar__tile--active {
+  background: black;
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: black;
+  color: white;
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #f8f8fa;
+}
+
+.react-calendar__tile--range {
+  background: #f8f8fa;
+  color: black;
+  border-radius: 0;
+}
+
+.react-calendar__tile--rangeStart {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background: black;
+  color: white;
+}
+
+.react-calendar__tile--rangeEnd {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: black;
+  color: white;
+}
+
+.outer-bar {
+  width: 200px;
+  height: 14px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 7px;
+  border: solid;
+}
+
+.inner-bar {
+  height: 14px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  position: relative; /* Ensure the button is positioned relative to the modal */
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal button.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: black;
+  z-index: 1;
+}
+
+.modal h3 {
+  margin-top: 0;
+}
+
+.modal button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #555;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal input,
+.modal select {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal input[type="submit"] {
+  background-color: black; /* Black background for submit button */
+  color: white; /* White text color */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal input[type="submit"]:hover {
+  background-color: #333; /* Darker shade of black on hover */
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-container > div {
+  margin-bottom: 20px;
+}
+
+.auth form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.auth h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth input[type="email"],
+input[type="password"] {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.auth button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.loginbutton {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.signupbutton {
+  background-color: #007bff;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-container > div {
+  margin-bottom: 20px;
+}
+
+.auth-input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.auth-submit:hover {
+  background-color: #0056b3;
+}
+
+.auth-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  opacity: 0.8;
+}
+
+.auth-error {
+  color: red;
+}
+
+.all-together {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  border-top: 1px solid black;
+}
+
+.category-container {
+  width: 25%;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+  height: 100vh;
+}
+
+.category-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.category-add-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.category-add-button:hover {
+  background-color: #218838;
+}
+
+.category-list-container {
+  margin-top: 20px;
+}
+
+.category-list-header {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.category-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+.category-item.daily {
+  background-color: #e3f7e1; /* Different background for daily tasks */
+}
+
+.category-item-button {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.category-item-button:hover {
+  background-color: #0056b3;
+}
+
+.category-delete-button {
+  padding: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.button-container{
+  display: flex;
+}
+.category-delete-button:hover {
+  background-color: #c82333;
+}
+
+.todos {
+  width: 45%;
+  padding: 20px;
+  height: 100vh,
+}
+
+.todos h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.show-all-tasks-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.high-button {
+  width: 100%;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.mid-button {
+  width: 100%;
+  padding: 10px;
+  background-color: yellowgreen;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.low-button {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ListItem {
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ListItem.daily {
+  border-left: 4px solid #ff5722;
+  background-color: #fff8e1;
+}
+
+.ListItem p {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ListItem .ProgressBar {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.ListItem button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.ListItem button:hover {
+  background-color: #0056b3;
+}
+
+.ListItem button:last-child {
+  background-color: #ff5722;
+}
+
+.ListItem button:last-child:hover {
+  background-color: #e64a19;
+}
+
+.ListItem .Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.ListItem .Modal .close-button {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.calendar {
+  background-color: white;
+}
+
+/* Mobile Responsive Styles */
+
+@media (max-width: 768px) {
+  .react-calendar {
+    height: auto;
+    margin-left: 0;
+    border-left: none;
+  }
+
+  .all-together {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-container,
+  .todos {
+    width: 100%;
+    padding: 10px;
+    border-right: none;
+    height: auto;
+  }
+
+  .category-container {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .category-header {
+    font-size: 20px;
+  }
+
+  .category-input {
+    width: 100%;
+  }
+
+  .category-add-button,
+  .show-all-tasks-button {
+    width: 100%;
+  }
+
+  .category-list-container {
+    margin-top: 10px;
+  }
+
+  .category-list-header {
+    font-size: 18px;
+  }
+
+  .category-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-item-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .category-delete-button {
+    width: 100%;
+  }
+
+  .todos h2 {
+    font-size: 20px;
+  }
+
+  .ListItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ListItem button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .react-calendar__navigation button {
+    font-size: 14px;
+    min-width: 36px;
+  }
+
+  .react-calendar__tile {
+    padding: 6px;
+  }
+
+  .category-header,
+  .category-list-header,
+  .todos h2 {
+    font-size: 18px;
+  }
+}
+
+.Middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style for button-container */
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* Center buttons horizontally */
+  margin-top: 20px;
+}
+
+button.create,
+button.signout {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button.create {
+  background-color: #28a745;
+  color: white;
+}
+
+button.create:hover {
+  background-color: #218838;
+}
+
+button.signout {
+  background-color: #dc3545;
+  color: white;
+}
+
+button.signout:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  button.create,
+  button.signout {
+    width: 100%;
+    text-align: center;
+  }
+}
