@@ -42,7 +42,7 @@ function Auth() {
       <div>
         <form>
           <h2>{isLogIn ? "please Log in " : "plase sign up"}</h2>
-          <input className="auth-input" type="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} />
+          <input className="auth-input" type="email" placeholder="Username" onChange={(e) => setEmail(e.target.value)} />
           <input className="auth-input" type="password" placeholder="password"  onChange={(e) => setPassword(e.target.value)} />
           {!isLogIn && <input className="auth-input" type="password" placeholder="confirm password"  onChange={(e) => setConfirmPassword(e.target.value)} />}
           <input className="auth-submit" type="submit" onClick={(e) => handleSubmit(e, isLogIn ? "login" : "signup")} />

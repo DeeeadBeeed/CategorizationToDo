@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 import ProgressBar from "./ProgressBar";
+import DeleteModal from "./DeleteModal"; // Import the DeleteModal component
 
 function ListItem({ task, getData }) {
   const [showModal, setShowModal] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
 
   const handleEditClick = () => {
     setShowModal(true);
@@ -16,9 +18,10 @@ function ListItem({ task, getData }) {
       });
       if (response.status === 200) {
         getData();
+        setShowDeleteModal(false); // Close the delete modal after successful deletion
       }
     } catch (error) {
-      console.log("err");
+      console.log("Error deleting task:", error);
     }
   };
 
@@ -46,13 +49,16 @@ function ListItem({ task, getData }) {
       <ProgressBar progress={task.progress} />
       <div>
         <button onClick={handleEditClick}>Edit</button>
-        <button onClick={handleDeleteClick}>Delete</button>
+        <button onClick={() => setShowDeleteModal(true)}>Delete</button>
         <button onClick={handleToggleDailyClick}>
           {task.is_daily ? "Unset Daily" : "Set Daily"}
         </button>
       </div>
       {showModal && (
         <Modal mode={'edit'} setShowModal={setShowModal} task={task} getData={getData} />
+      )}
+      {showDeleteModal && (
+        <DeleteModal setShowDeleteModal={setShowDeleteModal} handleDelete={handleDeleteClick} />
       )}
     </div>
   );

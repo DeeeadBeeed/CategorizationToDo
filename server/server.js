@@ -170,11 +170,9 @@ app.post('/login', async (req, res) => {
 
 cron.schedule('0 0 * * *', async () => {
     try {
-        // Calculate tomorrow's date
-        const today = new Date();
+            const today = new Date();
         const todayDate = today.toISOString();
 
-        // Update todos where is_daily is TRUE
         await pool.query('UPDATE todos SET progress = 0, due_date = $1 WHERE is_daily = TRUE', [today]);
 
         console.log('Daily tasks reset');
